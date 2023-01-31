@@ -55,6 +55,8 @@ getInstruction(
                     (step5) => {
                       document.querySelector("#mashedPotatoes").innerHTML += `<li>${step5}</li>`
                       document.querySelector("#mashedPotatoes").innerHTML += `<li>Mashed potatoes are ready!</li>`
+                      document.getElementById("mashedPotatoesImg").removeAttribute("hidden");
+
                         },
                         (err) => {
                           console.log(err)
@@ -109,6 +111,7 @@ obtainInstruction("steak", 0)
   })
   .then((step7)=>{
     document.getElementById("steak").innerHTML += `<li>${step7}</li>`
+    document.getElementById("steakImg").removeAttribute("hidden");
     return obtainInstruction ("steak", 7)
   })
   .catch ((error)=>{
@@ -136,7 +139,7 @@ const makeBroccoli = async()=>{
     const step7 = await obtainInstruction("broccoli", 6);
     document.getElementById("broccoli").innerHTML += `<li>${step7}</li>`
     document.getElementById("broccoli").innerHTML += "<li>Broccoli is ready!</li>"
-   
+    document.getElementById("broccoliImg").removeAttribute("hidden");
   }
   catch (error) {
     console.log(error);
