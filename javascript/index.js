@@ -82,7 +82,41 @@ getInstruction(
       )
 
 // Iteration 2 - using promises
-// ...
+obtainInstruction("steak", 0)
+  .then((step1)=>{
+    document.getElementById("steak").innerHTML += `<li>${step1}</li>`
+    return obtainInstruction ("steak", 1)
+  })
+  .then((step2)=>{
+    document.getElementById("steak").innerHTML += `<li>${step2}</li>`
+    return obtainInstruction ("steak", 2)
+  })
+  .then((step3)=>{
+    document.getElementById("steak").innerHTML += `<li>${step3}</li>`
+    return obtainInstruction ("steak", 3)
+  })
+  .then((step4)=>{
+    document.getElementById("steak").innerHTML += `<li>${step4}</li>`
+    return obtainInstruction ("steak", 4)
+  })
+  .then((step5)=>{
+    document.getElementById("steak").innerHTML += `<li>${step5}</li>`
+    return obtainInstruction ("steak", 5)
+  })
+  .then((step6)=>{
+    document.getElementById("steak").innerHTML += `<li>${step6}</li>`
+    return obtainInstruction ("steak", 6)
+  })
+  .then((step7)=>{
+    document.getElementById("steak").innerHTML += `<li>${step7}</li>`
+    return obtainInstruction ("steak", 7)
+  })
+  .catch ((error)=>{
+    console.log(error);
+  })
+  .finally(() =>{
+  document.getElementById("steak").innerHTML += `<li>Steak is ready!</li>`
+  });
 
 // Iteration 3 using async/await
 // ...
