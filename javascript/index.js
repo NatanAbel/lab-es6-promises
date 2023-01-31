@@ -148,4 +148,23 @@ const makeBroccoli = async()=>{
 makeBroccoli();
 
 // Bonus 2 - Promise all
-// ...
+const allPromises = [
+  obtainInstruction("brusselsSprouts", 0),
+  obtainInstruction("brusselsSprouts", 1),
+  obtainInstruction("brusselsSprouts", 2),
+  obtainInstruction("brusselsSprouts", 3),
+  obtainInstruction("brusselsSprouts", 4),
+  obtainInstruction("brusselsSprouts", 5),
+  obtainInstruction("brusselsSprouts", 6),
+  ]
+Promise.all(allPromises)
+.then((allValues) => {
+  allValues.forEach((value) => {
+    document.getElementById("brusselsSprouts").innerHTML += `<li>${value}</li>`
+  })
+  document.getElementById("brusselsSprouts").innerHTML += "<li>Brussels Sprouts are ready!</li>",
+  document.getElementById("brusselsSproutsImg").removeAttribute("hidden")
+  .catch((error) => {
+    console.error(error)
+});
+});
